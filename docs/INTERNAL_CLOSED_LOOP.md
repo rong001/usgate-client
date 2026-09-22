@@ -12,3 +12,12 @@ Full evidence: **[usgate-demo/docs/INTERNAL_ANDROID_CLOSED_LOOP.md](https://gith
 | 真实专属客户端联网 / 管理端见真机设备 | **BLOCKED（无物理设备）** |
 
 Portal create→enable→revoke loop lives in `usgate-demo/portal/tests/e2e_internal_closed_loop.py`.
+
+## Revoke semantics
+
+See **[usgate-demo/docs/REVOKE_SEMANTICS.md](https://github.com/rong001/usgate-demo/blob/main/docs/REVOKE_SEMANTICS.md)**.
+
+| Item | Status |
+|------|--------|
+| `RevokeSemanticsTest.portalRejectAloneDoesNotSatisfyRevokeBar` | documents reject ≠ full revoke |
+| `RevokeSemanticsTest.realNodeRevoke_cacheAndSessionMustDie` | **@Ignore / BLOCKED** — not PASS |
