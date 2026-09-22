@@ -43,6 +43,8 @@ Full GPL-3.0 text: https://www.gnu.org/licenses/gpl-3.0.html
 
 ## libbox AAR (`singbox-android/libbox` via JitPack)
 
+Detailed pin / repro / GPL notes: [`docs/LIBBOX.md`](docs/LIBBOX.md).
+
 - Pinned version in `app/build.gradle.kts`: **1.13.14**
 - Default download URL (build-time only):
 

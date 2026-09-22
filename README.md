@@ -3,7 +3,9 @@
 > **Public Android source** for USGate.  
 > Stack demo / portal / deploy docs: **[rong001/usgate-demo](https://github.com/rong001/usgate-demo)**  
 > License: **Apache-2.0** (project sources) — see [`LICENSE`](LICENSE) and [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) (sing-box / libbox are **GPL-3.0-or-later**).  
-> Reproducible debug build: [`docs/BUILD_REPRO.md`](docs/BUILD_REPRO.md)
+> Reproducible debug build: [`docs/BUILD_REPRO.md`](docs/BUILD_REPRO.md) · libbox: [`docs/LIBBOX.md`](docs/LIBBOX.md)  
+> CI: [`.github/workflows/android-ci.yml`](.github/workflows/android-ci.yml) · emulator notes: [`docs/EMULATOR_TEST.md`](docs/EMULATOR_TEST.md)  
+> **Physical device** exit-IP / reconnect / traffic acceptance is **user-only** (never CI PASS) — see usgate-demo [`docs/ANDROID_CI_STATUS.md`](https://github.com/rong001/usgate-demo/blob/main/docs/ANDROID_CI_STATUS.md).
 
 品牌：**USGate**（`0.2.1-branded`）。Kotlin + AndroidX + Material 3 原生应用，对接 **3X-UI** 订阅链接，通过 **libbox（sing-box）** 在 `VpnService` 上代理真实流量。
 
@@ -182,7 +184,7 @@ com.usgate.client
 5. **配置校验 UX**：把 `Libbox.checkConfig` 失败原因展示到首页。
 6. **体积**：可再裁 ABI 或改用自编译瘦身 `libbox.aar`。
 7. **升级 libbox**：换 JitPack / 自编译版本后对照 `PlatformInterface` 方法是否变更。
-8. **单元测试**：对 `SingBoxConfigBuilder`（Reality / WS / SS）做 JVM 测试。
+8. **单元测试**：已有 `SubscriptionParser` / `ConnectionUiState` / `SingBoxConfigBuilder` JVM 测试；可再扩 WS/SS 分支覆盖。
 
 ---
 
@@ -201,6 +203,14 @@ cd landing && python3 -m http.server 8080
 - 本仓库源码：**Apache License 2.0**（[`LICENSE`](LICENSE)）。
 - 第三方：**sing-box / libbox** 为 **GPL-3.0-or-later**（见 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)）。分发含 libbox 的 APK 时请自行满足 GPL 义务；本仓库 **不** 二次分发 `libbox.aar`。
 - 仅供学习与二次开发。请遵守当地法律与目标服务条款。
+
+
+## CI & tests
+
+- Workflow: [`.github/workflows/android-ci.yml`](.github/workflows/android-ci.yml) — JDK 17, Android SDK, Gradle cache, `:app:fetchLibbox :app:assembleDebug`, unit tests, optional emulator instrumentation smoke, debug APK artifact.
+- Local unit tests: `./gradlew :app:testDebugUnitTest`
+- Emulator / BLOCKED VPN rows: [`docs/EMULATOR_TEST.md`](docs/EMULATOR_TEST.md), results [`docs/CI_EMULATOR_RESULTS.md`](docs/CI_EMULATOR_RESULTS.md).
+- **Physical Android exit IP / reconnect / traffic = NOT PASS in CI** — acceptance stays on the device owner (usgate-demo checklist).
 
 ## Related repos
 

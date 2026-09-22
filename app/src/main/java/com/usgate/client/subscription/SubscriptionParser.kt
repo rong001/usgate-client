@@ -1,6 +1,6 @@
 package com.usgate.client.subscription
 
-import android.util.Base64
+import java.util.Base64
 import java.net.URLDecoder
 import java.nio.charset.StandardCharsets
 import java.util.UUID
@@ -34,7 +34,7 @@ object SubscriptionParser {
         }
         return try {
             val cleaned = raw.replace("\\s".toRegex(), "")
-            val bytes = Base64.decode(cleaned, Base64.DEFAULT)
+            val bytes = Base64.getDecoder().decode(cleaned)
             String(bytes, StandardCharsets.UTF_8)
         } catch (_: Exception) {
             raw
@@ -90,7 +90,7 @@ object SubscriptionParser {
         // vmess://base64(json)
         return try {
             val b64 = link.substringAfter("://")
-            val jsonStr = String(Base64.decode(b64, Base64.DEFAULT), StandardCharsets.UTF_8)
+            val jsonStr = String(Base64.getDecoder().decode(b64), StandardCharsets.UTF_8)
             val obj = JSONObject(jsonStr)
             val host = obj.optString("add", obj.optString("host", ""))
             val port = obj.optInt("port", 0)
@@ -135,7 +135,7 @@ object SubscriptionParser {
             val hostPort = main.substring(at + 1)
             val (host, port) = splitHostPort(hostPort)
             val decodedUser = try {
-                String(Base64.decode(userInfo, Base64.DEFAULT), StandardCharsets.UTF_8)
+                String(Base64.getDecoder().decode(userInfo), StandardCharsets.UTF_8)
             } catch (_: Exception) {
                 userInfo
             }

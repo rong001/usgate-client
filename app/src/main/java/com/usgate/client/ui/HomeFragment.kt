@@ -109,23 +109,16 @@ class HomeFragment : Fragment() {
     }
 
     private fun setStatus(connected: Boolean = false, connecting: Boolean = false) {
-        when {
-            connecting -> {
-                binding.tvStatus.text = getString(R.string.status_connecting)
-                binding.tvStatus.setTextColor(ContextCompat.getColor(requireContext(), R.color.usgate_muted))
-                binding.btnConnect.text = getString(R.string.btn_disconnect)
-            }
-            connected -> {
-                binding.tvStatus.text = getString(R.string.status_connected)
-                binding.tvStatus.setTextColor(ContextCompat.getColor(requireContext(), R.color.usgate_connected))
-                binding.btnConnect.text = getString(R.string.btn_disconnect)
-            }
-            else -> {
-                binding.tvStatus.text = getString(R.string.status_disconnected)
-                binding.tvStatus.setTextColor(ContextCompat.getColor(requireContext(), R.color.usgate_text))
-                binding.btnConnect.text = getString(R.string.btn_connect)
-            }
+        val state = ConnectionUiState.fromFlags(connected = connected, connecting = connecting)
+        binding.tvStatus.text = getString(state.statusLabelRes())
+        binding.btnConnect.text = getString(state.primaryButtonRes())
+        val colorRes = when (state) {
+            ConnectionUiState.CONNECTING -> R.color.usgate_muted
+            ConnectionUiState.CONNECTED -> R.color.usgate_connected
+            ConnectionUiState.ERROR -> R.color.usgate_danger
+            ConnectionUiState.DISCONNECTED -> R.color.usgate_text
         }
+        binding.tvStatus.setTextColor(ContextCompat.getColor(requireContext(), colorRes))
     }
 
     override fun onDestroyView() {
