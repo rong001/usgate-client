@@ -40,3 +40,7 @@ usgate-secrets/
 # Optional tooling caches
 .kotlin/
 *.log
+
+# Local APK artifacts
+dist/
+
