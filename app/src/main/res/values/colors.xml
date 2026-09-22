@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- USGate brand — indigo / blue -->
+    <color name="usgate_primary">#4338CA</color>
+    <color name="usgate_primary_dark">#312E81</color>
+    <color name="usgate_primary_light">#6366F1</color>
+    <color name="usgate_accent">#60A5FA</color>
+    <color name="usgate_accent_soft">#A5B4FC</color>
+    <color name="usgate_bg">#EEF2FF</color>
+    <color name="usgate_surface">#FFFFFF</color>
+    <color name="usgate_text">#1E1B4B</color>
+    <color name="usgate_muted">#64748B</color>
+    <color name="usgate_danger">#DC2626</color>
+    <color name="usgate_connected">#4338CA</color>
+    <color name="ic_launcher_background">#4338CA</color>
+    <color name="usgate_splash_bg">#312E81</color>
+</resources>

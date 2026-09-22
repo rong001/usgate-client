@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.USGate" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/usgate_primary</item>
+        <item name="colorPrimaryDark">@color/usgate_primary_dark</item>
+        <item name="colorSecondary">@color/usgate_accent</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSurface">@color/usgate_surface</item>
+        <item name="android:statusBarColor">@color/usgate_primary_dark</item>
+        <item name="android:navigationBarColor">@color/usgate_bg</item>
+        <item name="android:windowBackground">@color/usgate_bg</item>
+        <item name="materialButtonStyle">@style/Widget.USGate.Button</item>
+    </style>
+
+    <!-- Cold start splash: indigo field + brand name via windowBackground layer-list -->
+    <style name="Theme.USGate.Splash" parent="Theme.USGate">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">@color/usgate_splash_bg</item>
+        <item name="android:navigationBarColor">@color/usgate_splash_bg</item>
+    </style>
+
+    <style name="Widget.USGate.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/usgate_primary</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="cornerRadius">28dp</item>
+    </style>
+</resources>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>USGate — 安全网关</title>
+  <style>
+    :root {
+      --primary: #4338CA;
+      --primary-dark: #312E81;
+      --accent: #60A5FA;
+      --accent-soft: #A5B4FC;
+      --bg: #EEF2FF;
+      --text: #1E1B4B;
+      --muted: #64748B;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(160deg, #c7d2fe 0%, var(--bg) 40%, #fff 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 48px 24px 24px;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 28px;
+      color: var(--primary);
+    }
+    .logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(67, 56, 202, 0.35);
+    }
+    .badge {
+      background: var(--accent);
+      color: var(--primary-dark);
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin: 24px 0 12px;
+      line-height: 1.25;
+      color: var(--primary-dark);
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 36em;
+      line-height: 1.6;
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 28px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(67, 56, 202, 0.3);
+    }
+    .cta:hover { filter: brightness(1.08); }
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 8px 24px 64px;
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 12px rgba(49, 46, 129, 0.06);
+      border: 1px solid #c7d2fe;
+    }
+    .card h3 { margin: 0 0 8px; color: var(--primary); }
+    .card p { margin: 0; color: var(--muted); line-height: 1.5; font-size: 0.95rem; }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 24px;
+    }
+    code {
+      background: #e0e7ff;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      color: var(--primary-dark);
+    }
+    .labels {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .labels span {
+      background: #fff;
+      border: 1px solid var(--accent-soft);
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="usgate-logo.png" alt="USGate" width="48" height="48" />
+      USGate <span class="badge">0.2.1</span>
+    </div>
+    <h1>简洁、现代的 Android VPN 客户端</h1>
+    <p class="lead">
+      USGate 对接 3X-UI 订阅（VLESS / VMess / Shadowsocks），提供连接控制与节点选择，
+      并通过 libbox（sing-box）在系统 VPN 上代理真实流量。
+    </p>
+    <div class="labels">
+      <span>连接</span>
+      <span>断开</span>
+      <span>订阅</span>
+      <span>节点</span>
+      <span>设置</span>
+    </div>
+    <a class="cta" href="../README.md">查看构建说明</a>
+  </header>
+  <main>
+    <div class="card">
+      <h3>订阅</h3>
+      <p>粘贴 3X-UI 订阅 URL 或分享链接，本地解析并保存节点列表。</p>
+    </div>
+    <div class="card">
+      <h3>连接 / 断开</h3>
+      <p>首页一键连接与断开，状态清晰；基于 Android <code>VpnService</code>。</p>
+    </div>
+    <div class="card">
+      <h3>节点 · 设置</h3>
+      <p>在节点列表中选择出口，在设置中管理订阅；内核为可插拔的 libbox。</p>
+    </div>
+  </main>
+  <footer>
+    © USGate · 品牌色 indigo / 蓝 · 不含真实服务器地址或密钥
+  </footer>
+</body>
+</html>

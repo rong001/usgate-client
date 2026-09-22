@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">USGate</string>
+    <string name="app_tagline">安全网关</string>
+    <string name="home_title">首页</string>
+    <string name="settings_title">设置</string>
+    <string name="nodes_title">节点</string>
+    <string name="status_disconnected">未连接</string>
+    <string name="status_connecting">连接中…</string>
+    <string name="status_connected">已连接</string>
+    <string name="status_error">出错</string>
+    <string name="btn_connect">连接</string>
+    <string name="btn_disconnect">断开</string>
+    <string name="btn_select_node">选择节点</string>
+    <string name="btn_save">保存</string>
+    <string name="btn_import">导入订阅</string>
+    <string name="subscription_hint">粘贴订阅链接（3X-UI / 分享链接）</string>
+    <string name="subscription_label">订阅</string>
+    <string name="no_node_selected">尚未选择节点</string>
+    <string name="vpn_notification_title">USGate</string>
+    <string name="vpn_notification_text">安全隧道运行中</string>
+    <string name="vpn_channel_name">VPN 状态</string>
+    <string name="scaffold_notice">已接入 libbox（sing-box）。导入订阅并选择节点后即可连接；无 AAR 时将回退为占位内核。</string>
+    <string name="import_ok">订阅导入成功，共 %1$d 个节点</string>
+    <string name="import_fail">导入失败：%1$s</string>
+    <string name="save_ok">已保存</string>
+    <string name="need_node">请先选择节点</string>
+    <string name="protocol_unknown">未知</string>
+    <string name="nodes_empty">暂无节点，请先到「设置」导入订阅</string>
+    <string name="settings_hint">在 3X-UI 面板复制「订阅」链接粘贴到上方。支持 base64 多行 vless/vmess/ss，或明文分享链接。</string>
+    <string name="vpn_permission_required">需要 VPN 授权才能连接</string>
+    <string name="subscription_required">请先填写订阅地址或粘贴分享链接</string>
+</resources>

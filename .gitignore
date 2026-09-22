@@ -1,0 +1,42 @@
+# IDE / local machine
+*.iml
+.idea/
+.DS_Store
+*.swp
+*~
+
+# Gradle / Android build
+.gradle/
+build/
+**/build/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+
+# Artifacts — never commit
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+*.keystore
+*.jks
+
+# Third-party native cores — downloaded at build time, not redistributed in git
+app/libs/*.aar
+app/libs/*.jar
+!app/libs/.gitkeep
+
+# Secrets / private lab paths (safety net; these live outside this tree)
+usgate-secrets/
+**/usgate-secrets/
+*.pem
+*.key
+.env
+.env.*
+!*env.example
+
+# Optional tooling caches
+.kotlin/
+*.log
